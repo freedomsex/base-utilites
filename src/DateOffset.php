@@ -27,22 +27,22 @@ class DateOffset
 
     public static function decMin($min = 1, $time = null)
     {
-        return self::timeDecSec(60 * $min, $time);
+        return self::decSec(60 * $min, $time);
     }
 
     public static function decHour($hour = 1, $time = null)
     {
-        return self::timeDecSec(60 * 60 * $hour, $time);
+        return self::decSec(60 * 60 * $hour, $time);
     }
      
     public static function decDay($day = 1, $time = null)
     {
-        return self::timeDecSec(60 * 60 * 24 * $day, $time);
+        return self::decSec(60 * 60 * 24 * $day, $time);
     }
      
     public static function decMonth($month = 1, $time = null)
     {
-        return self::timeDecSec(60 * 60 * 24 * 30 * $month, $time);
+        return self::decSec(60 * 60 * 24 * 30 * $month, $time);
     }   
     
     
@@ -53,21 +53,21 @@ class DateOffset
 
     public static function incMin($min = 1, $time = null)
     {
-        return self::timeIncSec(60 * $min, $time);
+        return self::incSec(60 * $min, $time);
     }
 
     public static function incHour($hour = 1, $time = null)
     {
-        return self::timeIncSec(60 * 60 * $hour, $time);
+        return self::incSec(60 * 60 * $hour, $time);
     }
      
     public static function incDay($day = 1, $time = null)
     {
-        return self::timeIncSec(60 * 60 * 24 * $day, $time);
+        return self::incSec(60 * 60 * 24 * $day, $time);
     }
      
     public static function incMonth($month = 1, $time = null)
     {
-        return self::timeIncSec(60 * 60 * 24 * 30 * $month, $time);
+        return self::incSec(60 * 60 * 24 * 30 * $month, $time);
     }
 }
