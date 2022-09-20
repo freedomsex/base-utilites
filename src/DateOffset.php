@@ -15,8 +15,8 @@ class DateOffset
             $time = time();
         }
         $time = $time + $sec;
-        $result = date(self::DSTR, $time);
-        return $result;
+        $date = new \DateTime($time);
+        return $date->format(self::DSTR);
     }
 
     public static function DateTime($mySQLDate)
