@@ -12,8 +12,7 @@ class DateOffset
             $sec = $sec * -1;
         }
         if (is_null($time)) {
-            $date = new \DateTime();
-            $time = $date->getTimestamp();
+            $time = time();
         }
         $time = $time + $sec;
         $result = date(self::DSTR, $time);
