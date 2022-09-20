@@ -11,9 +11,6 @@ class DateOffset
         if ($negative) {
             $sec = $sec * -1;
         }
-        if (is_null($time)) {
-            $time = time();
-        }
         $date = new \DateTime($time);
         return $date->modify("$sec sec")->format(self::DSTR);
     }
