@@ -12,14 +12,19 @@ class DateOffset
             $sec = $sec * -1;
         }
         if (is_null($time)) {
-            $time = time();
+            $date = new \DateTime();
+            $time = $date->getTimestamp();
         }
         $time = $time + $sec;
         $result = date(self::DSTR, $time);
         return $result;
     }
-    
-    
+
+    public static function DateTime($mySQLDate)
+    {
+        return \DateTime::createFromFormat(self::DSTR, $mySQLDate);
+    }
+
     public static function decSec($sec = 1, $time = null)
     {
         return self::offset($sec, $time, true);
@@ -34,18 +39,18 @@ class DateOffset
     {
         return self::decSec(60 * 60 * $hour, $time);
     }
-     
+
     public static function decDay($day = 1, $time = null)
     {
         return self::decSec(60 * 60 * 24 * $day, $time);
     }
-     
+
     public static function decMonth($month = 1, $time = null)
     {
         return self::decSec(60 * 60 * 24 * 30 * $month, $time);
-    }   
-    
-    
+    }
+
+
     public static function incSec($sec = 1, $time = null)
     {
         return self::offset($sec, $time, false);
@@ -60,12 +65,12 @@ class DateOffset
     {
         return self::incSec(60 * 60 * $hour, $time);
     }
-     
+
     public static function incDay($day = 1, $time = null)
     {
         return self::incSec(60 * 60 * 24 * $day, $time);
     }
-     
+
     public static function incMonth($month = 1, $time = null)
     {
         return self::incSec(60 * 60 * 24 * 30 * $month, $time);
