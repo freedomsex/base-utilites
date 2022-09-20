@@ -6,12 +6,16 @@ class DateOffset
 {
     const DSTR = 'Y-m-d H:i:s';
 
-    public static function offset($sec, $time = null, $negative = false)
+    public static function offset(int $sec, ?int $time = null, bool $negative = false): string
     {
         if ($negative) {
             $sec = $sec * -1;
         }
-        $date = new \DateTime($time);
+        if (!$time) {
+            $time = time();
+        }
+        $date = new \DateTime();
+        $date->setTimestamp($time);
         return $date->modify("$sec sec")->format(self::DSTR);
     }
 
