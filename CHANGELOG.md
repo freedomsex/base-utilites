@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/freedomsex/base-utilites/compare/0.1.0...0.1.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* time point ([de3cfe0](https://github.com/freedomsex/base-utilites/commit/de3cfe0c905282100023acadbf09d4fec38e986e))
+
 ## [0.1.0](https://github.com/freedomsex/base-utilites/compare/0.0.11...0.1.0) (2022-09-20)
 
 
